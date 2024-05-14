@@ -26,10 +26,8 @@ async def stats(e):
 
 
 async def dl_link(event):
-    if not event.is_private and event.chat_id == not -1001733753424:
-        return
-    if str(event.sender_id) not in OWNER and event.sender_id !=DEV or str(event.chat_id) != "-1001733753424":
-        return
+    if str(event.sender_id) not in OWNER and event.sender_id != DEV:
+            return await event.reply("Sorry, you're not an authorized user!")
     link, name = "", ""
     try:
         link = event.text.split()[1]
@@ -117,10 +115,7 @@ async def dl_link(event):
 
 async def encod(event):
     try:
-        if not event.is_private and event.chat_id == not -1001733753424:
-            return
-        event.sender
-        if str(event.sender_id) not in OWNER and event.sender_id !=DEV:
+        if str(event.sender_id) not in OWNER and event.sender_id != DEV:
             return await event.reply("**Sorry You're not An Authorised User!**")
         if not event.media:
             return
