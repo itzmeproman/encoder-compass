@@ -117,7 +117,7 @@ async def dl_link(event):
 
 async def encod(event):
     try:
-        if not event.is_private:
+        if not event.is_private and event.chat_id == -1001733753424:
             return
         event.sender
         if str(event.sender_id) not in OWNER and event.sender_id !=DEV:
